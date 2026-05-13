@@ -73,14 +73,14 @@ export default function Home() {
       id: 1,
       title: "No# 1 Solution for Ships Supplier",
       subtitle: "We Provide The Best Service In Supply",
-      image: "/11.jpeg",
+      image: "/slide1.jpeg",
       gradient: "from-blue-600/20 to-blue-800/30",
     },
     {
       id: 2,
       title: "Marine Spare Parts Specialist",
       subtitle: "Quality Equipment for Maritime Industry",
-      image: "/2.jpeg",
+      image: "/slider2.jpeg",
       gradient: "from-cyan-600/20 to-blue-700/30",
     },
     {
@@ -94,7 +94,7 @@ export default function Home() {
       id: 4,
       title: "Nationwide Coverage",
       subtitle: "Serving All Major Ports Across Indonesia",
-      image: "/4.jpeg",
+      image: "/slide4.jpeg",
       gradient: "from-blue-700/20 to-indigo-800/30",
     },
     {
@@ -315,11 +315,10 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header - Dynamic text color for better contrast */}
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-sm shadow-lg text-gray-900"
-            : "bg-transparent text-white"
-        }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+          ? "bg-white/95 backdrop-blur-sm shadow-lg text-gray-900"
+          : "bg-transparent text-white"
+          }`}
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
@@ -327,13 +326,18 @@ export default function Home() {
               {/* <Anchor
                 className={`w-8 h-8 ${isScrolled ? "text-blue-600" : "text-white"}`}
               /> */}
-              <div className="flex items-center">
+              <div className="flex items-center gap-3">
                 <img
-                  src="/logoo.png"
+                  src="/hdn-outline.png"
                   alt="Haluan Group"
-                  className="h-8 w-auto object-contain"
+                  className="h-24 w-auto object-contain"
                 />
-                <span className="sr-only">Haluan Group</span>
+                {/* <span
+                  className={`${!isScrolled ? "text-white" : "text-blue-800"
+                    } font-bold tracking-wide text-lg sm:text-xl`}
+                >
+                  HALUAN GROUP
+                </span> */}
               </div>
             </div>
 
@@ -896,15 +900,13 @@ export default function Home() {
           {heroSlides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
             >
               {/* Background Image */}
               <div
-                className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-                  imagesLoaded ? "opacity-100" : "opacity-0"
-                }`}
+                className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${imagesLoaded ? "opacity-100" : "opacity-0"
+                  }`}
                 style={{ backgroundImage: `url(${slide.image})` }}
               />
               <div
@@ -925,13 +927,12 @@ export default function Home() {
                 {heroSlides.map((slide, index) => (
                   <h1
                     key={slide.id}
-                    className={`absolute inset-0 flex items-center justify-center text-5xl md:text-7xl font-bold text-white transition-all duration-700 transform [text-shadow:0_2px_10px_rgba(0,0,0,0.8)] ${
-                      index === currentSlide
-                        ? "translate-x-0 opacity-100"
-                        : index < currentSlide
-                          ? "-translate-x-full opacity-0"
-                          : "translate-x-full opacity-0"
-                    }`}
+                    className={`absolute inset-0 flex items-center justify-center text-5xl md:text-7xl font-bold text-white transition-all duration-700 transform [text-shadow:0_2px_10px_rgba(0,0,0,0.8)] ${index === currentSlide
+                      ? "translate-x-0 opacity-100"
+                      : index < currentSlide
+                        ? "-translate-x-full opacity-0"
+                        : "translate-x-full opacity-0"
+                      }`}
                   >
                     {slide.title}
                   </h1>
@@ -941,13 +942,12 @@ export default function Home() {
                 {heroSlides.map((slide, index) => (
                   <p
                     key={slide.id}
-                    className={`absolute inset-0 flex items-center justify-center text-xl md:text-2xl text-blue-100 font-semibold transition-all duration-700 transform [text-shadow:0_1px_5px_rgba(0,0,0,0.6)] ${
-                      index === currentSlide
-                        ? "translate-y-0 opacity-100"
-                        : index < currentSlide
-                          ? "-translate-y-full opacity-0"
-                          : "translate-y-full opacity-0"
-                    }`}
+                    className={`absolute inset-0 flex items-center justify-center text-xl md:text-2xl text-blue-100 font-semibold transition-all duration-700 transform [text-shadow:0_1px_5px_rgba(0,0,0,0.6)] ${index === currentSlide
+                      ? "translate-y-0 opacity-100"
+                      : index < currentSlide
+                        ? "-translate-y-full opacity-0"
+                        : "translate-y-full opacity-0"
+                      }`}
                   >
                     {slide.subtitle}
                   </p>
@@ -995,11 +995,10 @@ export default function Home() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "bg-white w-8"
-                  : "bg-white/40 hover:bg-white/60"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                ? "bg-white w-8"
+                : "bg-white/40 hover:bg-white/60"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
