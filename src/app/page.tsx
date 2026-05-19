@@ -315,10 +315,11 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header - Dynamic text color for better contrast */}
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
-          ? "bg-white/95 backdrop-blur-sm shadow-lg text-gray-900"
-          : "bg-transparent text-white"
-          }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/95 backdrop-blur-sm shadow-lg text-gray-900"
+            : "bg-transparent text-white"
+        }`}
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
@@ -328,9 +329,12 @@ export default function Home() {
               /> */}
               <div className="flex items-center gap-3">
                 <img
-                  src="/hdn-outline.png"
+                  src="https://getshared.com/dashboard/api/files/98d9ebe2-4e8d-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1778650620962F"
                   alt="Haluan Group"
                   className="h-24 w-auto object-contain"
+                  loading="eager"
+                  decoding="async"
+                  referrerPolicy="no-referrer"
                 />
                 {/* <span
                   className={`${!isScrolled ? "text-white" : "text-blue-800"
@@ -900,13 +904,15 @@ export default function Home() {
           {heroSlides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
-                }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentSlide ? "opacity-100" : "opacity-0"
+              }`}
             >
               {/* Background Image */}
               <div
-                className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${imagesLoaded ? "opacity-100" : "opacity-0"
-                  }`}
+                className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+                  imagesLoaded ? "opacity-100" : "opacity-0"
+                }`}
                 style={{ backgroundImage: `url(${slide.image})` }}
               />
               <div
@@ -927,12 +933,13 @@ export default function Home() {
                 {heroSlides.map((slide, index) => (
                   <h1
                     key={slide.id}
-                    className={`absolute inset-0 flex items-center justify-center text-5xl md:text-7xl font-bold text-white transition-all duration-700 transform [text-shadow:0_2px_10px_rgba(0,0,0,0.8)] ${index === currentSlide
-                      ? "translate-x-0 opacity-100"
-                      : index < currentSlide
-                        ? "-translate-x-full opacity-0"
-                        : "translate-x-full opacity-0"
-                      }`}
+                    className={`absolute inset-0 flex items-center justify-center text-5xl md:text-7xl font-bold text-white transition-all duration-700 transform [text-shadow:0_2px_10px_rgba(0,0,0,0.8)] ${
+                      index === currentSlide
+                        ? "translate-x-0 opacity-100"
+                        : index < currentSlide
+                          ? "-translate-x-full opacity-0"
+                          : "translate-x-full opacity-0"
+                    }`}
                   >
                     {slide.title}
                   </h1>
@@ -942,12 +949,13 @@ export default function Home() {
                 {heroSlides.map((slide, index) => (
                   <p
                     key={slide.id}
-                    className={`absolute inset-0 flex items-center justify-center text-xl md:text-2xl text-blue-100 font-semibold transition-all duration-700 transform [text-shadow:0_1px_5px_rgba(0,0,0,0.6)] ${index === currentSlide
-                      ? "translate-y-0 opacity-100"
-                      : index < currentSlide
-                        ? "-translate-y-full opacity-0"
-                        : "translate-y-full opacity-0"
-                      }`}
+                    className={`absolute inset-0 flex items-center justify-center text-xl md:text-2xl text-blue-100 font-semibold transition-all duration-700 transform [text-shadow:0_1px_5px_rgba(0,0,0,0.6)] ${
+                      index === currentSlide
+                        ? "translate-y-0 opacity-100"
+                        : index < currentSlide
+                          ? "-translate-y-full opacity-0"
+                          : "translate-y-full opacity-0"
+                    }`}
                   >
                     {slide.subtitle}
                   </p>
@@ -995,10 +1003,11 @@ export default function Home() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
-                ? "bg-white w-8"
-                : "bg-white/40 hover:bg-white/60"
-                }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide
+                  ? "bg-white w-8"
+                  : "bg-white/40 hover:bg-white/60"
+              }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

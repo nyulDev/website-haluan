@@ -10,20 +10,45 @@ export default function CategoryPage() {
   const products = [
     {
       id: 1,
-      title: "Featured Rigging Equipment & General Deck Items",
+      title: " BOATSWAIN'S CHAIR WITH ROPE 620X160X25MM",
       category: "Premium",
       description: "High-quality products for maritime use. Designed for durability and performance in harsh environments.",
-      image: "", 
+      image: "https://getshared.com/dashboard/api/files/e79ace2d-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779090982793",
       features: ["Marine Grade", "Durable", "Industry Standard", "Certified"]
     },
     {
       id: 2,
-      title: "Standard Rigging Equipment & General Deck Items",
+      title: "INDUSTRIAL GALVANIZED OIL FUNNEL WITH BRASS STRAINER 125MM",
       category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
-      image: "", 
+      image: "https://getshared.com/dashboard/api/files/a3e36051-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779091179358",
+      features: ["Reliable", "Cost-effective", "Standard Compliance"]
+    },
+    {
+      id: 3,
+      title: "HAND BANDING MACHINE (FOR STEEL BAND)",
+      category: "Standard",
+      description: "Reliable and cost-effective equipment suitable for daily operations on board.",
+      image: "https://getshared.com/dashboard/api/files/8ac62533-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779091500600",
+      features: ["Reliable", "Cost-effective", "Standard Compliance"]
+    },
+    {
+      id: 4,
+      title: "ROPE THROWING BALL (Bandul Tali Buangan Karet) 600 GRAM PANJANG",
+      category: "Standard",
+      description: "Reliable and cost-effective equipment suitable for daily operations on board.",
+      image: "https://getshared.com/dashboard/api/files/ccaaf63f-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779091820459",
+      features: ["Reliable", "Cost-effective", "Standard Compliance"]
+    },
+    {
+      id: 5,
+      title: "SCUPPER PLUG UK. 90 x 115",
+      category: "Standard",
+      description: "Reliable and cost-effective equipment suitable for daily operations on board.",
+      image: "https://getshared.com/dashboard/api/files/bcf0b1ae-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779091908087",
       features: ["Reliable", "Cost-effective", "Standard Compliance"]
     }
+
   ];
 
   return (
@@ -62,40 +87,18 @@ export default function CategoryPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
               <div key={product.id} className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100 flex flex-col group">
-                <div 
-                  className="aspect-w-16 aspect-h-12 relative overflow-hidden bg-gray-100 flex items-center justify-center cursor-pointer"
-                  onClick={() => product.image && setSelectedImage(product.image)}
-                >
-                  {product.image ? (
-                    <img 
-                      src={product.image} 
-                      alt={product.title} 
-                      className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  ) : (
-                    <div className="w-full h-64 flex flex-col items-center justify-center text-gray-400">
-                      <ImageIcon className="w-12 h-12 mb-2 opacity-50" />
-                      <span className="text-sm font-medium">Image Not Available</span>
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-sm font-semibold text-blue-600 rounded-full">
-                    {product.category}
-                  </div>
-                </div>
-                
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{product.title}</h3>
-                  <p className="text-gray-600 mb-6 flex-grow">{product.description}</p>
-                  
-                  <div className="space-y-2 pt-4 border-t border-gray-100">
-                    {product.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-700">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                        <span>{feature}</span>
+                <div className="p-6 flex flex-col items-center">
+                  <div className="aspect-w-16 aspect-h-12 w-full overflow-hidden bg-gray-100 flex items-center justify-center cursor-pointer" onClick={() => product.image && setSelectedImage(product.image)}>
+                    {product.image ? (
+                      <img src={product.image} alt={product.title} className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="w-full h-full flex flex-col items-center justify-center text-gray-400">
+                        <ImageIcon className="w-12 h-12 mb-2 opacity-50" />
+                        <span className="text-sm font-medium">Image Not Available</span>
                       </div>
-                    ))}
+                    )}
                   </div>
+                  <h3 className="mt-4 text-2xl font-bold text-gray-900">{product.title}</h3>
                 </div>
               </div>
             ))}
@@ -107,8 +110,8 @@ export default function CategoryPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Interested in our products?</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">Contact our sales team today to request a quote or to learn more about our complete range of maritime supplies.</p>
-          <Link 
-            href="/#contact" 
+          <Link
+            href="/#contact"
             className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-md"
           >
             Request a Quote
@@ -117,20 +120,20 @@ export default function CategoryPage() {
       </section>
 
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative max-w-4xl w-full">
-            <button 
+            <button
               className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
               onClick={() => setSelectedImage(null)}
             >
               Close (X)
             </button>
-            <img 
-              src={selectedImage} 
-              alt="Product View" 
+            <img
+              src={selectedImage}
+              alt="Product View"
               className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />
