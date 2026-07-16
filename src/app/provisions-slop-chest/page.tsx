@@ -1,6 +1,6 @@
 "use client";
 
-import { Anchor, ArrowLeft, Package, CheckCircle, Image as ImageIcon } from "lucide-react";
+import { Anchor, ArrowLeft, Package, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,18 +11,14 @@ export default function CategoryPage() {
     {
       id: 1,
       title: "Featured Provisions & Slop Chest",
-      category: "Premium",
       description: "High-quality products for maritime use. Designed for durability and performance in harsh environments.",
       image: "", 
-      features: ["Marine Grade", "Durable", "Industry Standard", "Certified"]
     },
     {
       id: 2,
       title: "Standard Provisions & Slop Chest",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
       image: "", 
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
     }
   ];
 
@@ -79,23 +75,12 @@ export default function CategoryPage() {
                     </div>
                   )}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-sm font-semibold text-blue-600 rounded-full">
-                    {product.category}
-                  </div>
                 </div>
                 
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">{product.title}</h3>
                   <p className="text-gray-600 mb-6 flex-grow">{product.description}</p>
                   
-                  <div className="space-y-2 pt-4 border-t border-gray-100">
-                    {product.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-700">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               </div>
             ))}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Anchor, ArrowLeft, Package, CheckCircle, Image as ImageIcon } from "lucide-react";
+import { Anchor, ArrowLeft, Package, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,42 +11,32 @@ export default function CategoryPage() {
     {
       id: 1,
       title: " BOATSWAIN'S CHAIR WITH ROPE 620X160X25MM",
-      category: "Premium",
       description: "High-quality products for maritime use. Designed for durability and performance in harsh environments.",
-      image: "https://getshared.com/dashboard/api/files/e79ace2d-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779090982793",
-      features: ["Marine Grade", "Durable", "Industry Standard", "Certified"]
+      image: "/impa/23/1.png",
     },
     {
       id: 2,
       title: "INDUSTRIAL GALVANIZED OIL FUNNEL WITH BRASS STRAINER 125MM",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
-      image: "https://getshared.com/dashboard/api/files/a3e36051-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779091179358",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
+      image: "/impa/23/2.png",
     },
     {
       id: 3,
       title: "HAND BANDING MACHINE (FOR STEEL BAND)",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
-      image: "https://getshared.com/dashboard/api/files/8ac62533-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779091500600",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
+      image: "/impa/23/3.png",
     },
     {
       id: 4,
       title: "ROPE THROWING BALL (Bandul Tali Buangan Karet) 600 GRAM PANJANG",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
-      image: "https://getshared.com/dashboard/api/files/ccaaf63f-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779091820459",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
+      image: "/impa/23/4.png",
     },
     {
       id: 5,
       title: "SCUPPER PLUG UK. 90 x 115",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
-      image: "https://getshared.com/dashboard/api/files/bcf0b1ae-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779091908087",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
+      image: "/impa/23/5.png",
     }
 
   ];

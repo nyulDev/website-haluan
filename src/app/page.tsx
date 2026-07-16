@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import {
   Menu,
   X,
+  CheckCircle,
   Anchor,
   MapPin,
   Clock,
@@ -15,7 +16,6 @@ import {
   Mail,
   ChevronRight,
   ChevronDown,
-  CheckCircle,
   Users,
   Image as ImageIcon,
   ChevronLeft,
@@ -73,28 +73,28 @@ export default function Home() {
       id: 1,
       title: "No# 1 Solution for Ships Supplier",
       subtitle: "We Provide The Best Service In Supply",
-      image: "/slide1.jpeg",
+      image: "/slider/slide1.jpeg",
       gradient: "from-blue-600/20 to-blue-800/30",
     },
     {
       id: 2,
       title: "Marine Spare Parts Specialist",
       subtitle: "Quality Equipment for Maritime Industry",
-      image: "/slider2.jpeg",
+      image: "/slider/slider2.jpeg",
       gradient: "from-cyan-600/20 to-blue-700/30",
     },
     {
       id: 3,
       title: "24/7 Service Available",
       subtitle: "Your Trusted Partner in Marine Services",
-      image: "/24.png",
+      image: "/slider/24.png",
       gradient: "from-teal-600/20 to-blue-800/30",
     },
     {
       id: 4,
       title: "Nationwide Coverage",
       subtitle: "Serving All Major Ports Across Indonesia",
-      image: "/slide4.jpeg",
+      image: "/slider/slide4.jpeg",
       gradient: "from-blue-700/20 to-indigo-800/30",
     },
     {
@@ -102,7 +102,7 @@ export default function Home() {
       title: "Provisions",
       subtitle:
         "Each provision, you can choose the one that best suits your brand or needs.",
-      image: "/5s.jpeg",
+      image: "/slider/5s.jpeg",
       gradient: "from-blue-700/20 to-indigo-800/30",
     },
   ];
@@ -120,7 +120,7 @@ export default function Home() {
   const customers = [
     {
       name: "",
-      logo: "/andika.jpeg",
+      logo: "/customer/andika.jpeg",
       color: "text-red-600",
     },
     {
@@ -130,43 +130,43 @@ export default function Home() {
     },
     {
       name: "",
-      logo: "/humpuss.jpeg",
+      logo: "/customer/humpuss.jpeg",
       color: "text-orange-600",
     },
     {
       name: "",
-      logo: "/dbn (11).jpg",
+      logo: "/customer/dbn (11).jpg",
       color: "text-orange-600",
     },
     {
       name: "",
-      logo: "/hong.jpeg",
+      logo: "/customer/hong.jpeg",
       color: "text-orange-600",
     },
     {
       name: "",
-      logo: "/ARK1.png",
+      logo: "/customer/ARK1.png",
       color: "text-orange-600",
     },
     {
       name: "",
-      logo: "/waruna1.png",
+      logo: "/customer/waruna1.png",
       color: "text-orange-600",
     },
     {
       name: "",
-      logo: "/jsk.jpeg",
+      logo: "/customer/jsk.jpeg",
       color: "text-orange-600",
     },
     {
       name: "",
-      logo: "/k.jpg",
+      logo: "/customer/k.jpg",
       color: "text-orange-600",
     },
 
     {
       name: "",
-      logo: "/PSI.png",
+      logo: "/customer/PSI.png",
       color: "text-orange-600",
     },
   ];
@@ -174,75 +174,63 @@ export default function Home() {
   const galleryImages = [
     {
       id: 1,
-      category: "Ships",
       title: "Cargo Ship at Port",
-      image: "/AC1.jpeg",
+      image: "/galery-activity/AC1.jpeg",
     },
     {
       id: 2,
-      category: "Operations",
       title: "Marine Operations",
-      image: "/AC2.jpeg",
+      image: "/galery-activity/AC2.jpeg",
     },
     {
       id: 3,
-      category: "Equipment",
       title: "Marine Equipment",
-      image: "/AC3.jpeg",
+      image: "/galery-activity/AC3.jpeg",
     },
     {
       id: 4,
-      category: "Safety",
       title: "Safety Equipment",
-      image: "/aktivitas/ac7.PNG",
+      image: "/galery-activity/AC4.png"
     },
     {
       id: 5,
-      category: "Logistics",
       title: "Logistics Operations",
-      image: "/aktivitas/4.jpeg",
+      image: "/galery-activity/AC5.jpeg",
     },
     {
       id: 6,
-      category: "Ports",
       title: "Port Operations",
-      image: "/aktivitas/6.jpeg",
+      image: "/galery-activity/AC6.jpeg",
     },
     {
       id: 7,
-      category: "Services",
       title: "Ship Supply Services",
-      image: "/aktivitas/7.jpeg",
+      image: "/galery-activity/AC7.jpeg",
     },
     {
       id: 8,
-      category: "Team",
       title: "Our Professional Team",
-      image: "/aktivitas/8.jpeg",
+      image: "/galery-activity/AC8.jpeg",
     },
     {
       id: 9,
-      category: "Technology",
       title: "Marine Technology",
-      image: "/aktivitas/9.jpeg",
+      image: "/galery-activity/AC9.jpeg",
     },
     {
       id: 10,
-      category: "Global",
       title: "Global Shipping",
-      image: "/aktivitas/10.jpeg",
+      image: "/galery-activity/AC10.jpeg",
     },
     {
       id: 11,
-      category: "Quality",
       title: "Quality Control",
-      image: "/aktivitas/11.jpeg",
+      image: "/galery-activity/AC11.jpeg",
     },
     {
       id: 12,
-      category: "Support",
       title: "24/7 Support",
-      image: "/aktivitas/3.jpeg",
+      image: "/galery-activity/AC12.jpeg",
     },
   ];
 
@@ -315,11 +303,10 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Header - Dynamic text color for better contrast */}
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-sm shadow-lg text-gray-900"
-            : "bg-transparent text-white"
-        }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+          ? "bg-white/95 backdrop-blur-sm shadow-lg text-gray-900"
+          : "bg-transparent text-white"
+          }`}
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
@@ -329,7 +316,7 @@ export default function Home() {
               /> */}
               <div className="flex items-center gap-3">
                 <img
-                  src="https://getshared.com/dashboard/api/files/98d9ebe2-4e8d-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1778650620962F"
+                  src="https://getshared.com/dashboard/api/files/98d9ebe2-4e8d-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3ODE2NzExNDcsImV4cCI6MTc4NDI2MzE0N30.uIRErSZqVDai3uqtgsrFRwF5qaxbmAChqQSwVdtsmIc&t=1781671359346"
                   alt="Haluan Group"
                   className="h-24 w-auto object-contain"
                   loading="eager"
@@ -904,15 +891,13 @@ export default function Home() {
           {heroSlides.map((slide, index) => (
             <div
               key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
-              }`}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+                }`}
             >
               {/* Background Image */}
               <div
-                className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-                  imagesLoaded ? "opacity-100" : "opacity-0"
-                }`}
+                className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${imagesLoaded ? "opacity-100" : "opacity-0"
+                  }`}
                 style={{ backgroundImage: `url(${slide.image})` }}
               />
               <div
@@ -933,13 +918,12 @@ export default function Home() {
                 {heroSlides.map((slide, index) => (
                   <h1
                     key={slide.id}
-                    className={`absolute inset-0 flex items-center justify-center text-5xl md:text-7xl font-bold text-white transition-all duration-700 transform [text-shadow:0_2px_10px_rgba(0,0,0,0.8)] ${
-                      index === currentSlide
-                        ? "translate-x-0 opacity-100"
-                        : index < currentSlide
-                          ? "-translate-x-full opacity-0"
-                          : "translate-x-full opacity-0"
-                    }`}
+                    className={`absolute inset-0 flex items-center justify-center text-4xl md:text-5xl font-bold text-white transition-all duration-700 transform [text-shadow:0_2px_10px_rgba(0,0,0,0.8)] ${index === currentSlide
+                      ? "translate-x-0 opacity-100"
+                      : index < currentSlide
+                        ? "-translate-x-full opacity-0"
+                        : "translate-x-full opacity-0"
+                      }`}
                   >
                     {slide.title}
                   </h1>
@@ -949,13 +933,12 @@ export default function Home() {
                 {heroSlides.map((slide, index) => (
                   <p
                     key={slide.id}
-                    className={`absolute inset-0 flex items-center justify-center text-xl md:text-2xl text-blue-100 font-semibold transition-all duration-700 transform [text-shadow:0_1px_5px_rgba(0,0,0,0.6)] ${
-                      index === currentSlide
-                        ? "translate-y-0 opacity-100"
-                        : index < currentSlide
-                          ? "-translate-y-full opacity-0"
-                          : "translate-y-full opacity-0"
-                    }`}
+                    className={`absolute inset-0 flex items-center justify-center text-xl md:text-2xl text-blue-100 font-semibold transition-all duration-700 transform [text-shadow:0_1px_5px_rgba(0,0,0,0.6)] ${index === currentSlide
+                      ? "translate-y-0 opacity-100"
+                      : index < currentSlide
+                        ? "-translate-y-full opacity-0"
+                        : "translate-y-full opacity-0"
+                      }`}
                   >
                     {slide.subtitle}
                   </p>
@@ -1003,11 +986,10 @@ export default function Home() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? "bg-white w-8"
-                  : "bg-white/40 hover:bg-white/60"
-              }`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                ? "bg-white w-8"
+                : "bg-white/40 hover:bg-white/60"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Anchor, ArrowLeft, Package, CheckCircle, Image as ImageIcon } from "lucide-react";
+import { Anchor, ArrowLeft, Package, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,42 +11,32 @@ export default function CategoryPage() {
     {
       id: 1,
       title: "Fire blankets FIRE BLANKET 1.2X1.8MTR_WITH CASE(PVC)",
-      category: "Premium",
       description: "High-quality products for maritime use. Designed for durability and performance in harsh environments.",
       image: "https://getshared.com/dashboard/api/files/40140053-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779171674890",
-      features: ["Marine Grade", "Durable", "Industry Standard", "Certified"]
     },
     {
       id: 2,
       title: "Lifejacket automatic inflatable MED 150n",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
       image: "https://getshared.com/dashboard/api/files/598a5392-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779171674890",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
     },
     {
       id: 3,
       title: "SPANNER NAKAJIMA BRASS 72 MM 50A 2'",
-      category: "Premium",
       description: "High-quality products for maritime use. Designed for durability and performance in harsh environments.",
       image: "https://getshared.com/dashboard/api/files/67c5dd55-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779171674890",
-      features: ["Marine Grade", "Durable", "Industry Standard", "Certified"]
     },
     {
       id: 4,
       title: "SELF IGNITING LIGHT (LIFEBOUY) WITH BATTERY LITHIUM",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
       image: "https://getshared.com/dashboard/api/files/27f2b2a9-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779171674890",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
     },
     {
       id: 5,
       title: "Searchlights 12V 80W",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
       image: "https://getshared.com/dashboard/api/files/7889bd8c-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779171674890",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
     }
   ];
 

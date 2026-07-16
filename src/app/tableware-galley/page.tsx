@@ -1,6 +1,6 @@
 "use client";
 
-import { Anchor, ArrowLeft, Package, CheckCircle, Image as ImageIcon } from "lucide-react";
+import { Anchor, ArrowLeft, Package, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,27 +11,16 @@ export default function TablewareGalleyPage() {
     {
       id: 1,
       title: "Premium Tableware",
-      category: "Dining",
       description: "High-quality plates, bowls, and dining sets designed for cruise ships and commercial vessels. Durable, elegant, and built to withstand the rigors of marine environments.",
-      image: "", // Empty as requested
-      features: ["Chip Resistant", "Elegant Designs", "Microwave Safe", "Dishwasher Safe"]
+      image: "/impa/17/1.png", // Empty as requested
     },
     {
       id: 2,
       title: "Galley Utensils & Equipment",
-      category: "Kitchen",
       description: "Professional grade stainless steel utensils, pots, pans, and food preparation equipment for ship galleys.",
-      image: "", // Empty as requested
-      features: ["Marine Grade Stainless Steel", "Ergonomic Handles", "Heat Resistant", "Long Lasting"]
+      image: "/impa/17/2.png", // Empty as requested
     },
-    {
-      id: 3,
-      title: "Cutlery & Flatware",
-      category: "Dining",
-      description: "Premium stainless steel cutlery sets for officer dining and passenger restaurants on board.",
-      image: "", // Empty as requested
-      features: ["18/10 Stainless Steel", "Rust Resistant", "Polished Finish", "Various Styles"]
-    }
+
   ];
 
   return (
@@ -73,14 +62,14 @@ export default function TablewareGalleyPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product) => (
               <div key={product.id} className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100 flex flex-col group">
-                <div 
+                <div
                   className="aspect-w-16 aspect-h-12 relative overflow-hidden bg-gray-100 flex items-center justify-center cursor-pointer"
                   onClick={() => product.image && setSelectedImage(product.image)}
                 >
                   {product.image ? (
-                    <img 
-                      src={product.image} 
-                      alt={product.title} 
+                    <img
+                      src={product.image}
+                      alt={product.title}
                       className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
@@ -90,23 +79,12 @@ export default function TablewareGalleyPage() {
                     </div>
                   )}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-sm font-semibold text-blue-600 rounded-full">
-                    {product.category}
-                  </div>
                 </div>
-                
+
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">{product.title}</h3>
                   <p className="text-gray-600 mb-6 flex-grow">{product.description}</p>
-                  
-                  <div className="space-y-2 pt-4 border-t border-gray-100">
-                    {product.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-700">
-                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
+
                 </div>
               </div>
             ))}
@@ -119,8 +97,8 @@ export default function TablewareGalleyPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Interested in our products?</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">Contact our sales team today to request a quote or to learn more about our complete range of maritime supplies.</p>
-          <Link 
-            href="/#contact" 
+          <Link
+            href="/#contact"
             className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-md"
           >
             Request a Quote
@@ -130,20 +108,20 @@ export default function TablewareGalleyPage() {
 
       {/* Image Modal */}
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative max-w-4xl w-full">
-            <button 
+            <button
               className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
               onClick={() => setSelectedImage(null)}
             >
               Close (X)
             </button>
-            <img 
-              src={selectedImage} 
-              alt="Product View" 
+            <img
+              src={selectedImage}
+              alt="Product View"
               className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />

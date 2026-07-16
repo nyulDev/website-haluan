@@ -1,6 +1,6 @@
 "use client";
 
-import { Anchor, ArrowLeft, Package, CheckCircle, Image as ImageIcon } from "lucide-react";
+import { Anchor, ArrowLeft, Package, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,42 +11,32 @@ export default function CategoryPage() {
     {
       id: 1,
       title: "DYMO TAPE 9MM GREEN",
-      category: "Premium",
       description: "High-quality products for maritime use. Designed for durability and performance in harsh environments.",
       image: "https://getshared.com/dashboard/api/files/19ccef82-528b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779164580698",
-      features: ["Marine Grade", "Durable", "Industry Standard", "Certified"]
     },
     {
       id: 2,
       title: "DYMO TAPE 9MM BLACK",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
       image: "https://getshared.com/dashboard/api/files/5aea50da-533a-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779164580698",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
     },
     {
       id: 3,
       title: "DYMO TAPE 9MM RED",
-      category: "Premium",
       description: "High-quality products for maritime use. Designed for durability and performance in harsh environments.",
       image: "https://getshared.com/dashboard/api/files/945e3b65-528a-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779164580698",
-      features: ["Marine Grade", "Durable", "Industry Standard", "Certified"]
     },
     {
       id: 4,
       title: "BULLDOG CLIPS 75 MM TANPA MAGNET",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
       image: "https://getshared.com/dashboard/api/files/fd4f9a0c-528a-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779164580698",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
     },
     {
       id: 5,
       title: "BULLDOG CLIPS MAGNET 75MM",
-      category: "Premium",
       description: "High-quality products for maritime use. Designed for durability and performance in harsh environments.",
       image: "https://getshared.com/dashboard/api/files/cd4e62c8-528a-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779164580698",
-      features: ["Marine Grade", "Durable", "Industry Standard", "Certified"]
     },
   ];
 

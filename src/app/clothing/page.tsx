@@ -1,6 +1,6 @@
 "use client";
 
-import { Anchor, ArrowLeft, Package, CheckCircle, Image as ImageIcon } from "lucide-react";
+import { Anchor, ArrowLeft, Package, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,43 +11,42 @@ export default function ClothingPage() {
     {
       id: 1,
       title: "PLASTIC OIL / ACID RESISTANT GLOVES LONG",
-      category: "Safety",
       description: "High-visibility and flame-retardant coveralls designed to keep deck and engine crew safe and comfortable in extreme maritime conditions.",
-      image: "https://getshared.com/dashboard/api/files/a522c031-532b-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779158238254" // Empty as requested
+      image: "/impa/19/1.png" // Empty as requested
 
     },
     {
       id: 2,
       title: "GLOVES RUBBER NATURAL SHORT",
-      category: "Safety",
       description: "High-visibility and flame-retardant coveralls designed to keep deck and engine crew safe and comfortable in extreme maritime conditions.",
-      image: "https://getshared.com/dashboard/api/files/02bc9db6-528e-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779156603159" // Empty as requested
+      image: "impa/19/2.png" // Empty as requested
 
     },
     {
       id: 3,
       title: "GLOVES RUBBER NATURAL LONG",
-      category: "Safety",
       description: "Heavy-duty waterproof jackets, windbreakers, and thermal wear for harsh weather operations at sea.",
-      image: "https://getshared.com/dashboard/api/files/c2c0a888-5329-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779157436878", // Empty as requested
-      features: ["100% Waterproof", "Thermal Insulation", "Windproof", "Ergonomic Fit"]
+      image: "/impa/19/3.png", // Empty as requested
     },
     {
       id: 4,
       title: "WOOLEN WINTER GLOVES",
-      category: "Safety",
       description: "Marine-grade safety boots and shoes with slip-resistant soles, steel toe caps, and oil-resistant materials.",
-      image: "https://getshared.com/dashboard/api/files/68b0b7d2-528c-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779156552173", // Empty as requested
-      features: ["Steel Toe Protection", "Slip Resistant Sole", "Oil & Chemical Resistant", "Anti-fatigue Insole"]
+      image: "/impa/19/4.png", // Empty as requested
     },
     {
       id: 5,
       title: "GLOVES WORKING COTTON NON SLIP DOTS (Cap Bambu)",
-      category: "Safety",
       description: "Marine-grade safety boots and shoes with slip-resistant soles, steel toe caps, and oil-resistant materials.",
-      image: "https://getshared.com/dashboard/api/files/edb97bfb-528c-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779156695134", // Empty as requested
-      features: ["Steel Toe Protection", "Slip Resistant Sole", "Oil & Chemical Resistant", "Anti-fatigue Insole"]
-    }
+      image: "/impa/19/5.png", // Empty as requested
+    },
+    {
+      id: 6,
+      title: "GLOVES WORKING COTTON NON SLIP DOTS (Cap Bambu)",
+      description: "Marine-grade safety boots and shoes with slip-resistant soles, steel toe caps, and oil-resistant materials.",
+      image: "/impa/19/6.png", // Empty as requested
+    },
+
   ];
 
   return (
@@ -106,9 +105,6 @@ export default function ClothingPage() {
                     </div>
                   )}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-sm font-semibold text-blue-600 rounded-full">
-                    {product.category}
-                  </div>
                 </div>
 
                 <div className="p-6 flex flex-col items-center">

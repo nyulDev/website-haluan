@@ -1,6 +1,6 @@
 "use client";
 
-import { Anchor, ArrowLeft, Package, CheckCircle, Image as ImageIcon } from "lucide-react";
+import { Anchor, ArrowLeft, Package, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,42 +11,32 @@ export default function CategoryPage() {
     {
       id: 1,
       title: "CONDENSER TUBE BRUSH, STEEL, 38 MM x 1/2' MALE THREAD",
-      category: "Premium",
       description: "High-quality products for maritime use. Designed for durability and performance in harsh environments.",
       image: "https://getshared.com/dashboard/api/files/f1348941-534e-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779173449307",
-      features: ["Marine Grade", "Durable", "Industry Standard", "Certified"]
     },
     {
       id: 2,
       title: "WIRE BRUSHES STRAIGHT HANDLE STANDARD LENGHT 270 MM",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
       image: "                       https://getshared.com/dashboard/api/files/45a4e377-5351-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779174438842",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
     },
     {
       id: 3,
       title: "ANGLE RADIATOR BRUSHES 40MM     ",
-      category: "Premium",
       description: "High-quality products for maritime use. Designed for durability and performance in harsh environments.",
       image: "https://getshared.com/dashboard/api/files/a6b3647b-5350-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779174190415",
-      features: ["Marine Grade", "Durable", "Industry Standard", "Certified"]
     },
     {
       id: 4,
       title: "Wire Cup Brush Shaft Welded Type 50x6 mm",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
       image: "https://getshared.com/dashboard/api/files/1404dbab-5350-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779173888702",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
     },
     {
       id: 5,
       title: "KNOTTED TYPE CUP FOR HEAVY DUTY WORK 75MM X M10 (with nut)",
-      category: "Standard",
       description: "Reliable and cost-effective equipment suitable for daily operations on board.",
       image: "https://getshared.com/dashboard/api/files/a8ff7cab-534f-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779173930710",
-      features: ["Reliable", "Cost-effective", "Standard Compliance"]
     },
   ];
 

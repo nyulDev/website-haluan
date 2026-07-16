@@ -1,6 +1,6 @@
 "use client";
 
-import { Anchor, ArrowLeft, Package, CheckCircle, Image as ImageIcon } from "lucide-react";
+import { Anchor, ArrowLeft, Package, Image as ImageIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -11,18 +11,14 @@ export default function ClothLinenPage() {
     {
       id: 1,
       title: "PLASTIC, FLAT DUST PANS",
-      category: "Cabin Stores",
       description: "High-quality, durable linen specifically designed for maritime use. Includes bed sheets, pillowcases, blankets, and towels that withstand industrial laundering while maintaining comfort for the crew.",
-      image: "https://getshared.com/dashboard/api/files/883df920-528d-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779176784110",
-      features: ["100% Cotton", "Industrial Washable", "Maritime Standard", "High Thread Count"]
+      image: "/impa/15/1.png",
     },
     {
       id: 2,
       title: "TOILET BRUSH, NYLON",
-      category: "Apparel",
       description: "Professional uniforms for all ranks and robust workwear for deck and engine crew. Flame-retardant coveralls, high-visibility jackets, and specialized maritime safety clothing.",
       image: "https://getshared.com/dashboard/api/files/6df507c1-528d-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3Nzg2NTA1MzEsImV4cCI6MTc4MTI0MjUzMX0.Ooqbg6wHNS-DMdYbh4b7ZfwJIzZDSDV3QJ29t4a9L3U&t=1779176843341",
-      features: ["Flame Retardant Options", "High Visibility", "Durable Fabric", "All Sizes Available"]
     }
   ];
 
