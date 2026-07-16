@@ -21,6 +21,44 @@ import {
   ChevronLeft,
   ChevronRight as ChevronRightIcon,
 } from "lucide-react";
+const heroSlides = [
+  {
+    id: 1,
+    title: "No# 1 Solution for Ships Supplier",
+    subtitle: "We Provide The Best Service In Supply",
+    image: "/slider/slide1.jpeg",
+    gradient: "from-blue-600/20 to-blue-800/30",
+  },
+  {
+    id: 2,
+    title: "Marine Spare Parts Specialist",
+    subtitle: "Quality Equipment for Maritime Industry",
+    image: "/slider/slider2.jpeg",
+    gradient: "from-cyan-600/20 to-blue-700/30",
+  },
+  {
+    id: 3,
+    title: "24/7 Service Available",
+    subtitle: "Your Trusted Partner in Marine Services",
+    image: "/slider/24.png",
+    gradient: "from-teal-600/20 to-blue-800/30",
+  },
+  {
+    id: 4,
+    title: "Nationwide Coverage",
+    subtitle: "Serving All Major Ports Across Indonesia",
+    image: "/slider/slide4.jpeg",
+    gradient: "from-blue-700/20 to-indigo-800/30",
+  },
+  {
+    id: 5,
+    title: "Provisions",
+    subtitle:
+      "Each provision, you can choose the one that best suits your brand or needs.",
+    image: "/slider/5s.jpeg",
+    gradient: "from-blue-700/20 to-indigo-800/30",
+  },
+];
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,6 +74,32 @@ export default function Home() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+    if (isLeftSwipe) {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }
+    if (isRightSwipe) {
+      setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+    }
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,44 +132,7 @@ export default function Home() {
       .catch(() => setImagesLoaded(true)); // Continue even if some images fail
   }, []);
 
-  const heroSlides = [
-    {
-      id: 1,
-      title: "No# 1 Solution for Ships Supplier",
-      subtitle: "We Provide The Best Service In Supply",
-      image: "/slider/slide1.jpeg",
-      gradient: "from-blue-600/20 to-blue-800/30",
-    },
-    {
-      id: 2,
-      title: "Marine Spare Parts Specialist",
-      subtitle: "Quality Equipment for Maritime Industry",
-      image: "/slider/slider2.jpeg",
-      gradient: "from-cyan-600/20 to-blue-700/30",
-    },
-    {
-      id: 3,
-      title: "24/7 Service Available",
-      subtitle: "Your Trusted Partner in Marine Services",
-      image: "/slider/24.png",
-      gradient: "from-teal-600/20 to-blue-800/30",
-    },
-    {
-      id: 4,
-      title: "Nationwide Coverage",
-      subtitle: "Serving All Major Ports Across Indonesia",
-      image: "/slider/slide4.jpeg",
-      gradient: "from-blue-700/20 to-indigo-800/30",
-    },
-    {
-      id: 5,
-      title: "Provisions",
-      subtitle:
-        "Each provision, you can choose the one that best suits your brand or needs.",
-      image: "/slider/5s.jpeg",
-      gradient: "from-blue-700/20 to-indigo-800/30",
-    },
-  ];
+
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -880,6 +907,9 @@ export default function Home() {
       <section
         id="home"
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         {/* Background Slider */}
         <div className="absolute inset-0">
