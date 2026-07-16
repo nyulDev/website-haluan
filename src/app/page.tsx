@@ -883,11 +883,6 @@ export default function Home() {
       >
         {/* Background Slider */}
         <div className="absolute inset-0">
-          {!imagesLoaded && (
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-800/30">
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 via-slate-800/50 to-slate-900/60"></div>
-            </div>
-          )}
           {heroSlides.map((slide, index) => (
             <div
               key={slide.id}
@@ -896,8 +891,7 @@ export default function Home() {
             >
               {/* Background Image */}
               <div
-                className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${imagesLoaded ? "opacity-100" : "opacity-0"
-                  }`}
+                className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 opacity-100`}
                 style={{ backgroundImage: `url(${slide.image})` }}
               />
               <div
