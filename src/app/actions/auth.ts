@@ -32,30 +32,23 @@ function verifyToken(token: string): boolean {
 }
 
 export async function login(prevState: { error?: string }, formData: FormData) {
-  const username = formData.get("username") as string;
+  const email = formData.get("username") as string;
   const password = formData.get("password") as string;
 
-  const adminUser = process.env.ADMIN_USERNAME || "admin";
-  const adminPass = process.env.ADMIN_PASSWORD || "admin123";
+  let userId: string;
 
-  let userId = "admin";
+  try {
+    const user = await db.user.findUnique({
+      where: { email },
+    });
 
-  if (username === adminUser && password === adminPass) {
-    // Valid as admin
-  } else {
-    // Check from database
-    try {
-      const user = await db.user.findUnique({
-        where: { email: username },
-      });
-
-      if (!user || user.password !== password) {
-        return { error: "Email/Username atau password salah." };
-      }
-      userId = user.id;
-    } catch (error) {
-      return { error: "Terjadi kesalahan sistem saat login." };
+    if (!user || !user.password || user.password !== password) {
+      return { error: "Email atau password salah." };
     }
+
+    userId = user.id;
+  } catch (error) {
+    return { error: "Terjadi kesalahan sistem saat login." };
   }
 
   const payload = `${userId}:${Date.now()}`;

@@ -39,20 +39,20 @@ export default function LoginPage() {
 
           {/* Form */}
           <form action={formAction} className="space-y-5">
-            {/* Username */}
+            {/* Email */}
             <div className="space-y-2">
               <label htmlFor="username" className="block text-sm font-medium text-slate-300">
-                Email / Username
+                Email
               </label>
               <div className="relative">
                 <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
                 <input
                   id="username"
                   name="username"
-                  type="text"
+                  type="email"
                   required
                   autoComplete="username"
-                  placeholder="Masukkan email atau username"
+                  placeholder="Masukkan email"
                   className="w-full bg-white/5 border border-white/10 text-white placeholder-slate-500 rounded-xl pl-10 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
                 />
               </div>
