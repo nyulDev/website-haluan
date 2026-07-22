@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { createProduct, updateProduct } from "@/app/actions/product";
+import { ImagePlus, X } from "lucide-react";
 
 type Category = {
   id: string;
@@ -29,9 +30,52 @@ export function ProductForm({
   product?: Product;
 }) {
   const [isPending, setIsPending] = useState(false);
+  const [imageUrl, setImageUrl] = useState<string>(product?.image || "");
+  const [isUploading, setIsUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const isEditing = !!product;
   const action = isEditing ? updateProduct.bind(null, product.id) : createProduct;
+
+  async function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadError(null);
+    setIsUploading(true);
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setUploadError(data.error || "Upload failed");
+        return;
+      }
+
+      setImageUrl(data.url);
+    } catch {
+      setUploadError("Upload failed. Please try again.");
+    } finally {
+      setIsUploading(false);
+    }
+  }
+
+  function handleRemoveImage() {
+    setImageUrl("");
+    setUploadError(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  }
 
   return (
     <form
@@ -44,11 +88,11 @@ export function ProductForm({
     >
       <div className="space-y-2">
         <Label htmlFor="title">Title</Label>
-        <Input 
-          id="title" 
-          name="title" 
-          defaultValue={product?.title || ""} 
-          required 
+        <Input
+          id="title"
+          name="title"
+          defaultValue={product?.title || ""}
+          required
           placeholder="e.g. BOATSWAIN'S CHAIR"
         />
       </div>
@@ -71,34 +115,88 @@ export function ProductForm({
 
       <div className="space-y-2">
         <Label htmlFor="description">Description</Label>
-        <Textarea 
-          id="description" 
-          name="description" 
-          defaultValue={product?.description || ""} 
+        <Textarea
+          id="description"
+          name="description"
+          defaultValue={product?.description || ""}
           placeholder="Optional product description"
         />
       </div>
 
+      {/* Hidden input carries the final image path to the server action */}
+      <input type="hidden" name="image" value={imageUrl} />
+
       <div className="space-y-2">
-        <Label htmlFor="image">Image URL</Label>
-        <Input 
-          id="image" 
-          name="image" 
-          defaultValue={product?.image || ""} 
-          placeholder="e.g. /impa/23/1.png"
+        <Label>Image</Label>
+
+        {imageUrl ? (
+          <div className="relative inline-block">
+            <img
+              src={imageUrl}
+              alt="Product preview"
+              className="w-40 h-40 object-cover rounded-md border"
+            />
+            <button
+              type="button"
+              onClick={handleRemoveImage}
+              className="absolute -top-2 -right-2 bg-white border rounded-full p-0.5 shadow hover:bg-red-50 hover:border-red-300 transition-colors"
+              aria-label="Remove image"
+            >
+              <X className="w-4 h-4 text-slate-600" />
+            </button>
+          </div>
+        ) : (
+          <div
+            onClick={() => fileInputRef.current?.click()}
+            className="flex flex-col items-center justify-center w-40 h-40 border-2 border-dashed border-slate-300 rounded-md cursor-pointer hover:border-slate-400 hover:bg-slate-50 transition-colors"
+          >
+            <ImagePlus className="w-8 h-8 text-slate-400 mb-2" />
+            <span className="text-xs text-slate-500 text-center px-2">
+              {isUploading ? "Uploading..." : "Click to upload"}
+            </span>
+          </div>
+        )}
+
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="image/jpeg,image/jpg,image/png,image/webp,image/gif"
+          onChange={handleFileChange}
+          disabled={isUploading}
+          className="hidden"
         />
+
+        {!imageUrl && (
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            onClick={() => fileInputRef.current?.click()}
+            disabled={isUploading}
+          >
+            {isUploading ? "Uploading..." : "Choose Image"}
+          </Button>
+        )}
+
+        {uploadError && (
+          <p className="text-sm text-red-600">{uploadError}</p>
+        )}
+
+        <p className="text-xs text-slate-500">
+          JPEG, PNG, WebP or GIF — max 5MB
+        </p>
       </div>
 
       <div className="flex justify-end gap-4">
-        <Button 
-          type="button" 
-          variant="outline" 
+        <Button
+          type="button"
+          variant="outline"
           onClick={() => window.history.back()}
           disabled={isPending}
         >
           Cancel
         </Button>
-        <Button type="submit" disabled={isPending}>
+        <Button type="submit" disabled={isPending || isUploading}>
           {isPending ? "Saving..." : isEditing ? "Save Changes" : "Create Product"}
         </Button>
       </div>

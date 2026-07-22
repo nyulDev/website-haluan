@@ -74,7 +74,7 @@ export default function Home() {
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  
+
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
 
@@ -343,7 +343,7 @@ export default function Home() {
               /> */}
               <div className="flex items-center gap-3">
                 <img
-                  src="https://getshared.com/dashboard/api/files/98d9ebe2-4e8d-11f1-8264-ac1f6b763f30/stream?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjQ3NDU1LCJlbWFpbCI6Im55dWxtYWM5M0BnbWFpbC5jb20iLCJpYXQiOjE3ODE2NzExNDcsImV4cCI6MTc4NDI2MzE0N30.uIRErSZqVDai3uqtgsrFRwF5qaxbmAChqQSwVdtsmIc&t=1781671359346"
+                  src="/logo/hdn-outline.png"
                   alt="Haluan Group"
                   className="h-24 w-auto object-contain"
                   loading="eager"

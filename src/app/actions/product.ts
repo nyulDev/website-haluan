@@ -18,8 +18,8 @@ export async function deleteProduct(id: string) {
 
 export async function createProduct(formData: FormData) {
   const title = formData.get("title") as string;
-  const description = formData.get("description") as string;
-  const image = formData.get("image") as string;
+  const description = (formData.get("description") as string) || null;
+  const image = (formData.get("image") as string) || null;
   const categoryId = formData.get("categoryId") as string;
 
   try {
@@ -41,8 +41,8 @@ export async function createProduct(formData: FormData) {
 
 export async function updateProduct(id: string, formData: FormData) {
   const title = formData.get("title") as string;
-  const description = formData.get("description") as string;
-  const image = formData.get("image") as string;
+  const description = (formData.get("description") as string) || null;
+  const image = (formData.get("image") as string) || null;
   const categoryId = formData.get("categoryId") as string;
 
   try {
