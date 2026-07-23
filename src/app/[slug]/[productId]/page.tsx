@@ -116,7 +116,7 @@ export default async function ProductDetailPage(
               {/* CTA */}
               <div className="mt-6">
                 <a
-                  href="https://wa.me/+62811821723"
+                  href={`https://wa.me/+62811821723?text=${encodeURIComponent(`Apakah Barang dengan Nama *${product.title}* Ready ?`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-200"
