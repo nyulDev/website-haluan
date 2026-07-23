@@ -5,9 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { createProduct, updateProduct } from "@/app/actions/product";
-import { ImagePlus, X } from "lucide-react";
+import { ImagePlus, X, ChevronDown } from "lucide-react";
 
 type Category = {
   id: string;
@@ -20,6 +19,7 @@ type Product = {
   description: string | null;
   image: string | null;
   categoryId: string;
+  category?: { name: string };
 };
 
 export function ProductForm({
@@ -33,7 +33,16 @@ export function ProductForm({
   const [imageUrl, setImageUrl] = useState<string>(product?.image || "");
   const [isUploading, setIsUploading] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
+  const [categoryInput, setCategoryInput] = useState<string>(
+    product?.category?.name || categories.find(c => c.id === product?.categoryId)?.name || ""
+  );
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const categoryInputRef = useRef<HTMLInputElement>(null);
+
+  const filteredCategories = categories.filter((c) =>
+    c.name.toLowerCase().includes(categoryInput.toLowerCase())
+  );
 
   const isEditing = !!product;
   const action = isEditing ? updateProduct.bind(null, product.id) : createProduct;
@@ -98,19 +107,47 @@ export function ProductForm({
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="categoryId">Category</Label>
-        <Select name="categoryId" defaultValue={product?.categoryId || categories[0]?.id}>
-          <SelectTrigger>
-            <SelectValue placeholder="Select a category" />
-          </SelectTrigger>
-          <SelectContent>
-            {categories.map((c) => (
-              <SelectItem key={c.id} value={c.id}>
-                {c.name}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <Label htmlFor="categoryName">Category</Label>
+        <div className="relative">
+          <Input
+            ref={categoryInputRef}
+            id="categoryName"
+            name="categoryName"
+            value={categoryInput}
+            onChange={(e) => {
+              setCategoryInput(e.target.value);
+              setShowSuggestions(true);
+            }}
+            onFocus={() => setShowSuggestions(true)}
+            onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
+            placeholder="Ketik nama kategori baru atau pilih yang ada"
+            required
+            autoComplete="off"
+            className="pr-8"
+          />
+          <ChevronDown
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none"
+          />
+          {showSuggestions && (categoryInput === "" ? categories : filteredCategories).length > 0 && (
+            <ul className="absolute z-50 w-full mt-1 bg-white border border-slate-200 rounded-md shadow-lg max-h-48 overflow-y-auto">
+              {(categoryInput === "" ? categories : filteredCategories).map((c) => (
+                <li
+                  key={c.id}
+                  onMouseDown={() => {
+                    setCategoryInput(c.name);
+                    setShowSuggestions(false);
+                  }}
+                  className="px-3 py-2 text-sm cursor-pointer hover:bg-slate-100"
+                >
+                  {c.name}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <p className="text-xs text-slate-500">
+          Pilih kategori yang ada atau ketik nama baru untuk membuat kategori baru.
+        </p>
       </div>
 
       <div className="space-y-2">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LayoutDashboard, Users, Package, FileText, Settings, LogOut } from "lucide-react";
+import { LayoutDashboard, Users, Package, FileText, Settings, LogOut, Tag } from "lucide-react";
 import { logout } from "@/app/actions/auth";
 
 export default function DashboardLayout({
@@ -25,6 +25,10 @@ export default function DashboardLayout({
           <Link href="/dashboard/products" className="flex items-center gap-3 px-3 py-2 text-slate-700 rounded-md hover:bg-slate-100 transition-colors">
             <Package className="w-5 h-5" />
             Products
+          </Link>
+          <Link href="/dashboard/categories" className="flex items-center gap-3 px-3 py-2 text-slate-700 rounded-md hover:bg-slate-100 transition-colors">
+            <Tag className="w-5 h-5" />
+            Categories
           </Link>
           <Link href="/dashboard/posts" className="flex items-center gap-3 px-3 py-2 text-slate-700 rounded-md hover:bg-slate-100 transition-colors">
             <FileText className="w-5 h-5" />

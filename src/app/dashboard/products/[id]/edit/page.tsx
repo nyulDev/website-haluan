@@ -9,6 +9,7 @@ export default async function EditProductPage(props: { params: Promise<{ id: str
   const [product, categories] = await Promise.all([
     db.product.findUnique({
       where: { id: params.id },
+      include: { category: true },
     }),
     db.category.findMany({
       orderBy: { name: 'asc' }
