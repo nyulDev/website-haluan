@@ -1,7 +1,17 @@
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
+
+// For migration scripts, use standard PrismaClient with direct TCP connection
+// Neon accepts standard TCP connections on port 5432 too
 const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: process.env.DATABASE_URL,
+    },
+  },
+});
 
 const appDir = path.join(__dirname, 'src', 'app');
 
