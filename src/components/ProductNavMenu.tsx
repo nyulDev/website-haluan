@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 type Category = {
@@ -11,22 +11,12 @@ type Category = {
 
 interface Props {
   isScrolled: boolean;
-  /** Mobile mode: renders as an accordion list instead of hover dropdown */
+  categories: Category[];
   mobile?: boolean;
 }
 
-export default function ProductNavMenu({ isScrolled, mobile = false }: Props) {
-  const [categories, setCategories] = useState<Category[]>([]);
+export default function ProductNavMenu({ isScrolled, categories, mobile = false }: Props) {
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    fetch("/api/categories")
-      .then((r) => r.json())
-      .then((data) => {
-        if (Array.isArray(data)) setCategories(data);
-      })
-      .catch(() => {});
-  }, []);
 
   if (mobile) {
     return (
